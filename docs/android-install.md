@@ -69,6 +69,8 @@ The validator node validates and processes code execution requests on Android de
 
 ### Method 2: Install via NPM (if Node.js is available)
 
+> **Note**: NPM package installation is planned for future releases and is not yet available.
+
 ```bash
 npm install -g @openai/codex-validator
 ```
@@ -94,11 +96,13 @@ Start the validator node:
 codex-validator start
 ```
 
-To run in the background:
+To run in the background (requires daemon support in the binary):
 
 ```bash
 codex-validator start --daemon
 ```
+
+> **Note**: The `--daemon` flag availability depends on the binary implementation.
 
 ## Installing the Hosting Node
 
@@ -143,6 +147,8 @@ The hosting node manages file hosting and distribution for code artifacts on And
 
 ### Method 2: Install via NPM
 
+> **Note**: NPM package installation is planned for future releases and is not yet available.
+
 ```bash
 npm install -g @openai/codex-hosting
 ```
@@ -176,11 +182,13 @@ Start the hosting node:
 codex-hosting start
 ```
 
-To run in the background:
+To run in the background (requires daemon support in the binary):
 
 ```bash
 codex-hosting start --daemon
 ```
+
+> **Note**: The `--daemon` flag availability depends on the binary implementation.
 
 ## Connecting Validator and Hosting Nodes
 
@@ -234,17 +242,15 @@ cat ~/.codex/log/hosting.log
 
 ## Updating Nodes
 
-To update to the latest version:
+To update to the latest version, manually download and replace the binaries following the installation steps above:
 
-```bash
-# Update validator node
-codex-validator update
+1. Download the latest binary for your architecture
+2. Extract the archive
+3. Stop the running node (if active)
+4. Replace the old binary with the new one in `$PREFIX/bin/`
+5. Restart the node
 
-# Update hosting node
-codex-hosting update
-```
-
-Or manually download and replace the binaries following the installation steps above.
+> **Note**: Automatic update commands (`codex-validator update`, `codex-hosting update`) are planned for future releases.
 
 ## Uninstalling
 

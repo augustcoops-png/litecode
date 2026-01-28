@@ -113,13 +113,13 @@ echo ""
 
 if [ "$INSTALL_VALIDATOR" = true ]; then
     echo "Validator Node installed. Start with:"
-    echo "  ${YELLOW}codex-validator start${NC}"
+    echo -e "  ${YELLOW}codex-validator start${NC}"
     echo ""
 fi
 
 if [ "$INSTALL_HOSTING" = true ]; then
     echo "Hosting Node installed. Start with:"
-    echo "  ${YELLOW}codex-hosting start${NC}"
+    echo -e "  ${YELLOW}codex-hosting start${NC}"
     echo ""
 fi
 

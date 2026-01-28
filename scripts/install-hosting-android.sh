@@ -22,10 +22,10 @@ fi
 # Detect architecture
 ARCH=$(uname -m)
 case "$ARCH" in
-    aarch64)
+    aarch64|armv8l)
         BINARY="codex-hosting-aarch64-linux-android.tar.gz"
         ;;
-    armv7l|armv8l)
+    armv7l)
         BINARY="codex-hosting-armv7-linux-android.tar.gz"
         ;;
     *)
