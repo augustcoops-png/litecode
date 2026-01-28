@@ -4,13 +4,13 @@ This guide covers the installation of Codex validator and hosting nodes on Andro
 
 ## System Requirements
 
-| Requirement | Details |
-| --- | --- |
-| Operating System | Android 9.0 (Pie) or higher |
-| Architecture | arm64-v8a, armeabi-v7a |
-| Storage | Minimum 500 MB free space |
-| RAM | Minimum 2 GB (4 GB recommended) |
-| Termux | Required for CLI execution |
+| Requirement      | Details                         |
+| ---------------- | ------------------------------- |
+| Operating System | Android 9.0 (Pie) or higher     |
+| Architecture     | arm64-v8a, armeabi-v7a          |
+| Storage          | Minimum 500 MB free space       |
+| RAM              | Minimum 2 GB (4 GB recommended) |
+| Termux           | Required for CLI execution      |
 
 ## Prerequisites
 
@@ -33,25 +33,29 @@ The validator node validates and processes code execution requests on Android de
 ### Method 1: Download Pre-built Binary
 
 1. Download the appropriate binary for your architecture:
+
    ```bash
    # For arm64 devices (most modern Android phones)
    wget https://github.com/openai/codex/releases/latest/download/codex-validator-aarch64-linux-android.tar.gz
-   
+
    # For arm32 devices (older Android phones)
    wget https://github.com/openai/codex/releases/latest/download/codex-validator-armv7-linux-android.tar.gz
    ```
 
 2. Extract the archive:
+
    ```bash
    tar -xzf codex-validator-*.tar.gz
    ```
 
 3. Make the binary executable:
+
    ```bash
    chmod +x codex-validator
    ```
 
 4. Move to a directory in your PATH:
+
    ```bash
    mv codex-validator $PREFIX/bin/
    ```
@@ -101,25 +105,29 @@ The hosting node manages file hosting and distribution for code artifacts on And
 ### Method 1: Download Pre-built Binary
 
 1. Download the appropriate binary for your architecture:
+
    ```bash
    # For arm64 devices
    wget https://github.com/openai/codex/releases/latest/download/codex-hosting-aarch64-linux-android.tar.gz
-   
+
    # For arm32 devices
    wget https://github.com/openai/codex/releases/latest/download/codex-hosting-armv7-linux-android.tar.gz
    ```
 
 2. Extract the archive:
+
    ```bash
    tar -xzf codex-hosting-*.tar.gz
    ```
 
 3. Make the binary executable:
+
    ```bash
    chmod +x codex-hosting
    ```
 
 4. Move to a directory in your PATH:
+
    ```bash
    mv codex-hosting $PREFIX/bin/
    ```
@@ -167,6 +175,7 @@ codex-hosting start --daemon
 Once both nodes are running, configure Codex CLI to use them:
 
 1. Edit your Codex configuration at `~/.codex/config.toml`:
+
    ```toml
    [android]
    validator_url = "http://localhost:8080"
@@ -193,7 +202,7 @@ If the default ports are already in use, change them in the configuration files:
 
 ```json
 {
-  "port": 8082  // Use a different port
+  "port": 8082 // Use a different port
 }
 ```
 
