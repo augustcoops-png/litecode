@@ -4,13 +4,17 @@
 
 | Requirement                 | Details                                                         |
 | --------------------------- | --------------------------------------------------------------- |
-| Operating systems           | macOS 12+, Ubuntu 20.04+/Debian 10+, or Windows 11 **via WSL2** |
+| Operating systems           | macOS 12+, Ubuntu 20.04+/Debian 10+, Windows 11 **via WSL2**, or Android 9.0+ **via Termux** |
 | Git (optional, recommended) | 2.23+ for built-in PR helpers                                   |
 | RAM                         | 4-GB minimum (8-GB recommended)                                 |
 
 ### DotSlash
 
 The GitHub Release also contains a [DotSlash](https://dotslash-cli.com/) file for the Codex CLI named `codex`. Using a DotSlash file makes it possible to make a lightweight commit to source control to ensure all contributors use the same version of an executable, regardless of what platform they use for development.
+
+### Android Installation
+
+For Android devices, Codex provides validator and hosting nodes that can be installed via Termux. See the [Android Installation Guide](./android-install.md) for detailed instructions.
 
 ### Build from source
 

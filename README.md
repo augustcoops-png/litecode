@@ -38,8 +38,15 @@ Each GitHub Release contains many executables, but in practice, you likely want 
 - Linux
   - x86_64: `codex-x86_64-unknown-linux-musl.tar.gz`
   - arm64: `codex-aarch64-unknown-linux-musl.tar.gz`
+- Android
+  - Validator Node (arm64): `codex-validator-aarch64-linux-android.tar.gz`
+  - Validator Node (arm32): `codex-validator-armv7-linux-android.tar.gz`
+  - Hosting Node (arm64): `codex-hosting-aarch64-linux-android.tar.gz`
+  - Hosting Node (arm32): `codex-hosting-armv7-linux-android.tar.gz`
 
 Each archive contains a single entry with the platform baked into the name (e.g., `codex-x86_64-unknown-linux-musl`), so you likely want to rename it to `codex` after extracting it.
+
+For Android installation, see the [Android Installation Guide](./docs/android-install.md) for detailed instructions on setting up validator and hosting nodes.
 
 </details>
 
