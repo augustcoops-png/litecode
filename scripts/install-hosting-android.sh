@@ -59,6 +59,7 @@ echo ""
 
 # Download the binary
 echo "Downloading Codex Hosting Node..."
+echo -e "${YELLOW}Note: For enhanced security, verify checksums from the release page${NC}"
 DOWNLOAD_URL="https://github.com/openai/codex/releases/latest/download/$BINARY"
 TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"
@@ -119,6 +120,8 @@ if [ ! -f "$CONFIG_FILE" ]; then
 }
 EOF
     echo -e "${GREEN}✓${NC} Configuration created at $CONFIG_FILE"
+    echo -e "${YELLOW}Security Note: allowedOrigins is set to '*' for development.${NC}"
+    echo -e "${YELLOW}For production, restrict to trusted origins in $CONFIG_FILE${NC}"
 else
     echo -e "${YELLOW}Configuration already exists at $CONFIG_FILE${NC}"
 fi

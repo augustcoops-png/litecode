@@ -59,6 +59,7 @@ echo ""
 
 # Download the binary
 echo "Downloading Codex Validator Node..."
+echo -e "${YELLOW}Note: For enhanced security, verify checksums from the release page${NC}"
 DOWNLOAD_URL="https://github.com/openai/codex/releases/latest/download/$BINARY"
 TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"

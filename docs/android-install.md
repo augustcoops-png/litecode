@@ -30,6 +30,8 @@ Before installing the validator or hosting nodes, you need to set up Termux on y
 
 The validator node validates and processes code execution requests on Android devices.
 
+**Security Note**: Always download binaries from official GitHub releases and verify checksums when available. For enhanced security, check the release page for SHA256 checksums and verify them after download.
+
 ### Method 1: Download Pre-built Binary
 
 1. Download the appropriate binary for your architecture:
@@ -102,6 +104,8 @@ codex-validator start --daemon
 
 The hosting node manages file hosting and distribution for code artifacts on Android devices.
 
+**Security Note**: Always download binaries from official GitHub releases and verify checksums when available. For enhanced security, check the release page for SHA256 checksums and verify them after download.
+
 ### Method 1: Download Pre-built Binary
 
 1. Download the appropriate binary for your architecture:
@@ -156,6 +160,14 @@ Create a configuration file at `~/.codex/hosting-config.json`:
 }
 ```
 
+**Security Note**: The `allowedOrigins: ["*"]` setting allows requests from any origin. For production deployments, restrict this to specific trusted origins:
+
+```json
+{
+  "allowedOrigins": ["http://localhost:8080", "https://yourdomain.com"]
+}
+```
+
 ### Running the Hosting Node
 
 Start the hosting node:
@@ -202,9 +214,11 @@ If the default ports are already in use, change them in the configuration files:
 
 ```json
 {
-  "port": 8082 // Use a different port
+  "port": 8082
 }
 ```
+
+Note: Use a different port number if the default is already in use.
 
 ### Node Not Starting
 
